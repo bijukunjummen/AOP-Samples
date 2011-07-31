@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.bk</groupId>
-	<artifactId>project2</artifactId>
+	<artifactId>project3</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
-	<name>project2</name>
+	<name>project3</name>
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<aspectj.version>1.6.10</aspectj.version>

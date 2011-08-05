@@ -1,0 +1,1 @@
+@Aspectj compile time binding

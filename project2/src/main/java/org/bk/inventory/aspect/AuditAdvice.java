@@ -1,13 +1,12 @@
 package org.bk.inventory.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.bk.inventory.types.Inventory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AuditAspect {
+public class AuditAdvice {
 
-    private static Logger logger = LoggerFactory.getLogger(AuditAspect.class);
+    private static Logger logger = LoggerFactory.getLogger(AuditAdvice.class);
 
     public void beforeMethod() {
         logger.info("before method");
@@ -28,15 +27,5 @@ public class AuditAspect {
             throw new RuntimeException(e);
         }
     }
-    
-    public Object aroundMethodWithParameter(ProceedingJoinPoint joinpoint, Inventory inventory) {
-        try {
-            Object result = joinpoint.proceed();
-            logger.info(String.format("WITH PARAM: %s", inventory.toString()));
-            return result;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
-    
+        
 }

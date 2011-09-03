@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 import org.bk.inventory.service.InventoryService;
 import org.bk.inventory.service.DefaultInventoryService;
+import org.bk.inventory.service.InventoryServiceDecorator;
 import org.bk.inventory.types.Inventory;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ public class DirectBeanTest {
     
     @Before 
     public void setUp(){
-        this.inventoryService = new DefaultInventoryService();
+        this.inventoryService = new InventoryServiceDecorator(new DefaultInventoryService());
     }
     
     @Test

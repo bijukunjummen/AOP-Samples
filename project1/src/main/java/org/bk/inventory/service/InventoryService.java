@@ -12,6 +12,4 @@ public interface InventoryService {
     public Inventory update(Inventory inventory);
     public boolean delete(Long id);
     public Inventory compositeUpdateService(String vin, String newMake);
-    
-
 }

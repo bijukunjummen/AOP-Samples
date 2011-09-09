@@ -3,7 +3,7 @@ package org.bk.inventory.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bk.annotations.LogPerformance;
+import org.bk.annotations.PerfLog;
 import org.bk.inventory.types.Inventory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class DefaultInventoryService implements InventoryService{
     }
 
     @Override
-    @LogPerformance
+    @PerfLog
     public Inventory update(Inventory inventory) {
         return inventory;
     }
@@ -40,14 +40,14 @@ public class DefaultInventoryService implements InventoryService{
     }
 
     @Override
-    @LogPerformance
+    @PerfLog
     public Inventory findByVin(String vin) {
         logger.info("find by vin called");
         return new Inventory("testmake", "testmodel","testtrim","testvin" );
     }
 
     @Override
-    @LogPerformance
+    @PerfLog
     public Inventory compositeUpdateService(String vin, String newMake) {
         logger.info("composite Update Service called");
         Inventory inventory = findByVin(vin);

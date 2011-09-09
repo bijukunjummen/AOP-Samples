@@ -12,7 +12,7 @@ public class AuditAspect {
 
     private static Logger logger = LoggerFactory.getLogger(AuditAspect.class);
 
-    @Pointcut("execution(@org.bk.annotations.LogPerformance * *.*(..))")
+    @Pointcut("execution(@org.bk.annotations.PerfLog * *.*(..))")
     public void performanceTargets(){}
    
 

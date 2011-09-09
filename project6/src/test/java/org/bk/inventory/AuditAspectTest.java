@@ -1,7 +1,7 @@
 package org.bk.inventory;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 import org.bk.inventory.service.InventoryService;
 import org.bk.inventory.types.Inventory;

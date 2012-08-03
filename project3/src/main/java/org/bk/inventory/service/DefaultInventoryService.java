@@ -51,4 +51,5 @@ public class DefaultInventoryService implements InventoryService{
         update(inventory);
         return inventory;
     }
+
 }

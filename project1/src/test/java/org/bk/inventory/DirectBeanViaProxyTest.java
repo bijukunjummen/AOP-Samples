@@ -27,5 +27,4 @@ public class DirectBeanViaProxyTest {
         assertThat(this.inventoryService.delete(1L), is(true));
         assertThat(this.inventoryService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
     }
-
 }

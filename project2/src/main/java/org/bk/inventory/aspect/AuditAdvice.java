@@ -8,18 +8,13 @@ public class AuditAdvice {
 
     private static Logger logger = LoggerFactory.getLogger(AuditAdvice.class);
 
-    public void beforeMethod() {
-        logger.info("before method");
-    }
-
-    public void afterMethod() {
-        logger.info("after method");
-    }
 
     public Object aroundMethod(ProceedingJoinPoint joinpoint) {
         try {
             long start = System.nanoTime();
+            logger.info("before method:" + joinpoint.getSignature().getName());
             Object result = joinpoint.proceed();
+            logger.info("after method:" + joinpoint.getSignature().getName());
             long end = System.nanoTime();
             logger.info(String.format("%s took %d ns", joinpoint.getSignature(), (end - start)));
             return result;

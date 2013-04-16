@@ -20,10 +20,10 @@ public class AuditAspect {
     public void serviceMethods(){
         //
     }
-    @Pointcut("execution(* org.bk.inventory.service.*.*(org.bk.inventory.types.Inventory)) && args(inventory)")
-    public void serviceMethodsWithInventoryAsParam(Inventory inventory){
-        //
-    }
+//    @Pointcut("execution(* org.bk.inventory.service.*.*(org.bk.inventory.types.Inventory)) && args(inventory)")
+//    public void serviceMethodsWithInventoryAsParam(Inventory inventory){
+//        //
+//    }
     
     @Before("serviceMethods()")
     public void beforeMethod() {
@@ -43,16 +43,16 @@ public class AuditAspect {
         }
     }
     
-    @Around("serviceMethodsWithInventoryAsParam(inventory)")
-    public Object aroundMethodWithParameter(ProceedingJoinPoint joinpoint, Inventory inventory) {
-        try {
-            Object result = joinpoint.proceed();
-            logger.info(String.format("WITH PARAM: %s", inventory.toString()));
-            return result;
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    @Around("serviceMethodsWithInventoryAsParam(inventory)")
+//    public Object aroundMethodWithParameter(ProceedingJoinPoint joinpoint, Inventory inventory) {
+//        try {
+//            Object result = joinpoint.proceed();
+//            logger.info(String.format("WITH PARAM: %s", inventory.toString()));
+//            return result;
+//        } catch (Throwable e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
     
     @After("serviceMethods()")
     public void afterMethod() {

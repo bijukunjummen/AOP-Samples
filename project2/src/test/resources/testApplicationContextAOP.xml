@@ -15,10 +15,7 @@
 	<aop:config>
 		<aop:aspect ref="auditAspect">
 			<aop:pointcut id="serviceMethods" expression="execution(* org.bk.inventory.service.*.*(..))" />
-
-			<aop:before pointcut-ref="serviceMethods" method="beforeMethod"/>  
 			<aop:around pointcut-ref="serviceMethods" method="aroundMethod"/>
-			<aop:after-returning pointcut-ref="serviceMethods" method="afterMethod"/> 
 		</aop:aspect>
 	</aop:config>
 </beans>

@@ -1,1 +1,1 @@
-@Aspectj compile time binding
+@Aspectj compile time weaving

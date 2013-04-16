@@ -5,7 +5,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 import org.bk.inventory.service.InventoryService;
 import org.bk.inventory.service.DefaultInventoryService;
-import org.bk.inventory.service.InventoryServiceDecorator;
+import org.bk.inventory.service.InventoryServiceProxy;
 import org.bk.inventory.types.Inventory;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class DirectBeanTest {
     
     @Before 
     public void setUp(){
-        this.inventoryService = new InventoryServiceDecorator(new DefaultInventoryService());
+        this.inventoryService = new InventoryServiceProxy(new DefaultInventoryService());
     }
     
     @Test
@@ -25,6 +25,7 @@ public class DirectBeanTest {
         assertThat(inventory.getId(), is(1L));
         
         assertThat(this.inventoryService.delete(1L), is(true));
+        inventoryService.findByVin("vin");
         assertThat(this.inventoryService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
     }
 

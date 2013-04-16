@@ -1,6 +1,5 @@
 package org.bk.inventory.aspect;
 
-import org.bk.inventory.types.Inventory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +8,7 @@ public aspect AuditAspect {
 
     pointcut serviceMethods() : execution(* org.bk.inventory.service.*.*(..));
 
-    pointcut serviceMethodsWithInventoryAsParam(Inventory inventory) : execution(* org.bk.inventory.service.*.*(Inventory)) && args(inventory);
+//    pointcut serviceMethodsWithInventoryAsParam(Inventory inventory) : execution(* org.bk.inventory.service.*.*(Inventory)) && args(inventory);
 
     before() : serviceMethods() {
         logger.info("before method");
@@ -24,11 +23,11 @@ public aspect AuditAspect {
         return result;
     }
 
-    Object around(Inventory inventory) : serviceMethodsWithInventoryAsParam(inventory) {
-        Object result = proceed(inventory);
-        logger.info(String.format("WITH PARAM: %s", inventory.toString()));
-        return result;
-    }
+//    Object around(Inventory inventory) : serviceMethodsWithInventoryAsParam(inventory) {
+//        Object result = proceed(inventory);
+//        logger.info(String.format("WITH PARAM: %s", inventory.toString()));
+//        return result;
+//    }
     after() : serviceMethods() {
         logger.info("after method");
     }

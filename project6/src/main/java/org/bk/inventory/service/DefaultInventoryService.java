@@ -16,6 +16,7 @@ public class DefaultInventoryService implements InventoryService{
 
     
     @Override
+    @PerfLog
     public Inventory create(Inventory inventory) {
         logger.info("Create Inventory called");
         inventory.setId(1L);
@@ -24,23 +25,25 @@ public class DefaultInventoryService implements InventoryService{
 
     @Override
     public List<Inventory> list() {
+    	logger.info("List Inventory called");
         return new ArrayList<Inventory>();
     }
 
     @Override
     @PerfLog
     public Inventory update(Inventory inventory) {
+    	logger.info("Update Inventory called");
         return inventory;
     }
 
     @Override
+    @PerfLog
     public boolean delete(Long id) {
         logger.info("Delete Inventory called");
         return true;
     }
 
     @Override
-    @PerfLog
     public Inventory findByVin(String vin) {
         logger.info("find by vin called");
         return new Inventory("testmake", "testmodel","testtrim","testvin" );

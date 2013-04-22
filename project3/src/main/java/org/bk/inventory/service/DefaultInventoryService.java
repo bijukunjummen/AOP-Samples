@@ -23,11 +23,13 @@ public class DefaultInventoryService implements InventoryService{
 
     @Override
     public List<Inventory> list() {
+    	logger.info("List Inventory called");
         return new ArrayList<Inventory>();
     }
 
     @Override
     public Inventory update(Inventory inventory) {
+    	logger.info("Update Inventory called");
         return inventory;
     }
 
@@ -51,5 +53,4 @@ public class DefaultInventoryService implements InventoryService{
         update(inventory);
         return inventory;
     }
-
 }

@@ -6,19 +6,19 @@ import org.slf4j.LoggerFactory;
 public aspect AuditAspect {
     private static Logger logger = LoggerFactory.getLogger(AuditAspect.class);
 
-    pointcut serviceMethods() : execution(* org.bk.inventory.service.*.*(..));
+    pointcut serviceMethods() : execution(* org.bk.inventory.service..*(..));
 
 //    pointcut serviceMethodsWithInventoryAsParam(Inventory inventory) : execution(* org.bk.inventory.service.*.*(Inventory)) && args(inventory);
 
     before() : serviceMethods() {
-        logger.info("before method");
+        logger.info("before method {}", thisJoinPoint.getSignature().toShortString());
     }
 
     Object around() : serviceMethods() {
         long start = System.nanoTime();
         Object result = proceed();
         long end = System.nanoTime();
-        logger.info(String.format("%s took %d ns", thisJoinPointStaticPart.getSignature(),
+        logger.info(String.format("%s took %d ns", thisJoinPoint.getSignature().toShortString(),
                 (end - start)));
         return result;
     }
@@ -29,6 +29,6 @@ public aspect AuditAspect {
 //        return result;
 //    }
     after() : serviceMethods() {
-        logger.info("after method");
+        logger.info("after method {}", thisJoinPoint.getSignature().toShortString());
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<aspectj>
+	<aspects>
+		<aspect name="org.bk.inventory.aspect.AuditAspect"/>
+	</aspects>
+	<weaver options="-verbose -showWeaveInfo">
+	  
+	</weaver>
+</aspectj>

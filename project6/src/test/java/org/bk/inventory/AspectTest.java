@@ -1,7 +1,7 @@
 package org.bk.inventory;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 import org.bk.inventory.service.InventoryService;
 import org.bk.inventory.types.Inventory;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/testApplicationContextAOP.xml")
-public class AspectTests {
+public class AspectTest {
 
     @Autowired 
     InventoryService inventoryService;

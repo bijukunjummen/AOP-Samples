@@ -1,13 +1,12 @@
 package org.bk.inventory.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.bk.inventory.types.Inventory;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,8 +25,8 @@ public class AuditAspect {
 //    }
     
     @Before("serviceMethods()")
-    public void beforeMethod() {
-        logger.info("before method");
+    public void beforeMethod(JoinPoint joinpoint) {
+        logger.info("before method {}", joinpoint.getSignature().toShortString());
     }
 
     @Around("serviceMethods()")
@@ -36,7 +35,7 @@ public class AuditAspect {
             long start = System.nanoTime();
             Object result = joinpoint.proceed();
             long end = System.nanoTime();
-            logger.info(String.format("%s took %d ns", joinpoint.getSignature(), (end - start)));
+            logger.info(String.format("%s took %d ns", joinpoint.getSignature().toShortString(), (end - start)));
             return result;
         } catch (Throwable e) {
             throw new RuntimeException(e);
@@ -55,7 +54,7 @@ public class AuditAspect {
 //    }
     
     @After("serviceMethods()")
-    public void afterMethod() {
-        logger.info("after method");
+    public void afterMethod(JoinPoint joinpoint) {
+        logger.info("after method {}", joinpoint.getSignature().toShortString());
     }    
 }

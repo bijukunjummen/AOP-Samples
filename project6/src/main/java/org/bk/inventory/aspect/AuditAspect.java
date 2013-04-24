@@ -20,6 +20,7 @@ public class AuditAspect {
    
     @Before("performanceTargets()")
     public void before(JoinPoint joinpoint ) {
+    	logger.info("--------------------------------------------------------------------------------------");
     	logger.info("Before {}", joinpoint.getSignature().toShortString());
     }
 

@@ -22,6 +22,7 @@ public class AuditAspect {
     
     @Before("serviceMethods()")
     public void beforeMethod() {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method");
     }
 

@@ -11,6 +11,7 @@ public aspect AuditAspect {
 //    pointcut serviceMethodsWithInventoryAsParam(Inventory inventory) : execution(* org.bk.inventory.service.*.*(Inventory)) && args(inventory);
 
     before() : serviceMethods() {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method {}", thisJoinPoint.getSignature().toShortString());
     }
 

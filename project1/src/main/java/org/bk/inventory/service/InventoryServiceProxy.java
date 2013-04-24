@@ -16,6 +16,7 @@ public class InventoryServiceProxy implements InventoryService{
     
     @Override
     public Inventory create(Inventory inventory) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: create");
         long start = System.nanoTime();
 
@@ -30,6 +31,7 @@ public class InventoryServiceProxy implements InventoryService{
 
     @Override
     public List<Inventory> list() {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: list");
         long start = System.nanoTime();       	
         
@@ -44,6 +46,7 @@ public class InventoryServiceProxy implements InventoryService{
 
     @Override
     public Inventory findByVin(String vin) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: findByVin");
         long start = System.nanoTime();   
         
@@ -58,6 +61,7 @@ public class InventoryServiceProxy implements InventoryService{
 
     @Override
     public Inventory update(Inventory inventory) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: update");
         long start = System.nanoTime();       
         
@@ -72,6 +76,7 @@ public class InventoryServiceProxy implements InventoryService{
 
     @Override
     public boolean delete(Long id) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: delete");
         long start = System.nanoTime();    	
         
@@ -85,6 +90,7 @@ public class InventoryServiceProxy implements InventoryService{
 
     @Override
     public Inventory compositeUpdateService(String vin, String newMake) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: compositeUpdate");
         long start = System.nanoTime();
 

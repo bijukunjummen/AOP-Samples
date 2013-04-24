@@ -23,8 +23,7 @@ public class DirectBeanDynamicProxyTest {
     public void testInventoryService() {
         Inventory inventory = this.inventoryService.create(new Inventory("testmake", "testmodel","testtrim","testvin" ));
         assertThat(inventory.getId(), is(1L));
-        
-        assertThat(this.inventoryService.delete(1L), is(true));
+        this.inventoryService.findByVin("vin");
         assertThat(this.inventoryService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
     }
 }

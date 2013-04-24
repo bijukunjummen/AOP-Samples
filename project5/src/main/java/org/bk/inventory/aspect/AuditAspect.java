@@ -26,6 +26,7 @@ public class AuditAspect {
     
     @Before("serviceMethods()")
     public void beforeMethod(JoinPoint joinpoint) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method {}", joinpoint.getSignature().toShortString());
     }
 

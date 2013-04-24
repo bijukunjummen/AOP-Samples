@@ -23,9 +23,7 @@ public class ServiceThroughProxyTest {
     public void testInventoryService() {
         Inventory inventory = this.inventoryService.create(new Inventory("testmake", "testmodel","testtrim","testvin" ));
         assertThat(inventory.getId(), is(1L));
-        
-        assertThat(this.inventoryService.delete(1L), is(true));
-        inventoryService.findByVin("vin");
+        this.inventoryService.findByVin("vin");
         assertThat(this.inventoryService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
     }
 

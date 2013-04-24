@@ -10,6 +10,7 @@ public class AuditAdvice {
     private static Logger logger = LoggerFactory.getLogger(AuditAdvice.class);
 
     public void beforeMethod(JoinPoint joinpoint) {
+    	logger.info("--------------------------------------------------------------------------------------");
         logger.info("before method: {}", joinpoint.getSignature().toShortString());
     }
     

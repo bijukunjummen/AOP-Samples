@@ -23,6 +23,7 @@ public class AuditProxy implements java.lang.reflect.InvocationHandler {
     public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
         Object result;
         try {
+        	logger.info("--------------------------------------------------------------------------------------");
             logger.info("before method " + m.getName());
             long start = System.nanoTime();
             result = m.invoke(obj, args);

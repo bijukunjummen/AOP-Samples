@@ -1,6 +1,14 @@
 AOP-Samples
 ===========
 
+java 18
+```
+mvn clean test
+
+```
+
+
+
 AOP Samples - different ways of writing Aspects
 
 Project1 - Use case implemented without using Aspects and an alternate approach using Java Dynamic Proxies

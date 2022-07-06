@@ -9,16 +9,16 @@ mvn clean test
 
 
 
-AOP Samples - different ways of writing Aspects
+AOP Samples - 6 different ways of implementing Aspects
 
-Project1 - Use case implemented without using Aspects and an alternate approach using Java Dynamic Proxies
+Project1 - implemented with only Java Dynamic Proxies without any dependencies  
 
-Project2 - Use case implemented using Spring AOP, with XML based bean configuration
+Project2 - implemented with Spring AOP, with XML based bean configuration
 
-Project3 - Use case implemented using Spring AOP, but using @AspectJ annotations
+Project3 - implemented with Spring AOP, but using @AspectJ annotations
 
-Project4 - Use case implemented using Native AspectJ .aj file and compile time weaving
+Project4 - implemented with Native AspectJ .aj file and compile time weaving
 
-Project5 - Use case implemented using Native AspectJ @AspectJ support and compile time weaving
+Project5 - implemented with Native AspectJ @AspectJ support and compile time weaving
 
 Project6 - Comprehensive example - using Native AspectJ @AspectJ support and compile time weaving

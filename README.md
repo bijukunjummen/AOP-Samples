@@ -9,7 +9,7 @@ mvn clean test
 
 
 
-AOP Samples - 6 different ways of implementing Aspects
+Aspect Oriented Programming (AOP) Examples - 6 different ways of implementing Aspects
 
 Project1 - implemented with only Java Dynamic Proxies without any dependencies  
 
